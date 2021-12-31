@@ -24,12 +24,12 @@
   #define AIR_INPUT_THRESHOLD 0.80
 
 #ifdef CHARLIEPLEXED
-int led_pins[3] = {0,0,0};        //Pins for IR LEDs (using Charlieplex)
+int led_pins[3] = {0,0,0};        //Pins for IR LEDs (CHARLIEPLEXED)
                                   //In Openithm's words, first value is LED_0, second is LED_1, thrid is LED_2
 #endif
 
-#ifdef STAGGERED
-int led_pins[6] = {0,0,0,0,0,0};  //Pins for IR LEDs (using Staggered)
+#if (defined(DIGITAL) || defined(STAGGERED))
+int led_pins[6] = {0,0,0,0,0,0};  //Pins for IR LEDs (DIGITAL or STAGGERED)
                                   //Bottom most is the first value, top most is the last value
 #endif
 
